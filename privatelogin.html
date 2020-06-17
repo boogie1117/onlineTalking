@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>软件聊天室</title>
+
+    <link rel="stylesheet" href="css/amazeui.min.css" />
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel='stylesheet prefetch' href='css/chatting.css'>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+    	function login(){
+    		var userId1=document.getElementById("userId1").value;
+    		var userId2= document.getElementById("userId2").value;
+			var courseId=document.getElementById("courseId").value;
+    		//alert(ip);
+    		$.cookie('user_id1', userId1,{ path: '/' });
+    		$.cookie('user_id2', userId2,{ path: '/' });
+    		$.cookie('course_id', courseId,{ path: '/' });
+    		//alert($.cookie('user_name'));
+      		window.location.href="privatechatting.html";
+    	}
+    	
+    </script>
+</head>
+
+<body data-type="login">
+	<div class="container clearfix" style="height: 554px;">
+		<div class="myapp-login-logo-block  tpl-login-max">
+			<div class="myapp-login-logo-text">
+				<div class="myapp-login-logo-text">
+					<span> Login</span> <i class="am-icon-skyatlas"></i>
+					
+				</div>
+			</div>
+	
+			<div class="login-font">
+				<!--<i onclick="signUp();">Sign Up </i> or <span onclick="reset();"> forget?</span>-->
+			</div>
+			<div class="am-u-sm-10 login-am-center">
+				<form class="am-form" action="index.html" method="post" onsubmit="return login();">
+					<fieldset>
+						<div class="am-form-group">
+							<input type="text" class="" id="userId1" placeholder="你的学号" required="required" style="border-radius:5px ;">
+						</div>
+						<div class="am-form-group">
+							<input type="text" class="" id="userId2" placeholder="你要私聊的学号" required="required" style="border-radius:5px ;">
+						</div>
+						<div class="am-form-group">
+							<input type="text" class="" id="courseId" placeholder="你们所在的课程号" required="required" style="border-radius:5px ;">
+						</div>
+						<p><button type="button" class="am-btn am-btn-default" onclick='login();'>登录</button></p>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+
+   <script type="text/javascript" src="js/jquery.cookie.js"></script> 
+</body>
+
+</html>
